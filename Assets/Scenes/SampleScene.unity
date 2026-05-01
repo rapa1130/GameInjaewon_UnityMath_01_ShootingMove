@@ -160,6 +160,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &80908552
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -284,6 +285,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &137707409
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -408,6 +410,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &168856118
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -494,6 +497,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 986585676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &277922145
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Name
+      value: Waving Mob Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fallSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnStart
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fluctuatingAmplitude
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
 --- !u!1 &309035527
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +616,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &309035530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -779,6 +864,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &700310042
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -997,6 +1083,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &721677683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1083,6 +1170,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 986585676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &772388051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Name
+      value: Waving Mob Spawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fallSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnStart
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fluctuatingAmplitude
+      value: -2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
 --- !u!1 &913834056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1289,7 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
 --- !u!135 &913834059
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1357,79 +1526,59 @@ MonoBehaviour:
   yFluctuatingAmplitude: 1
   xFluctuatingFrequency: 0.5
   yFluctuatingFrequency: 1.5
---- !u!1001 &1023943245
-PrefabInstance:
+--- !u!1 &1455260043
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455260045}
+  - component: {fileID: 1455260044}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1455260044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455260043}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 104.99, y: 19, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1455260045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455260043}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: m_Name
-      value: Waving Mob Spawner (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: spawnCount
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: spawnStart
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
-      propertyPath: fluctuatingAmplitude
-      value: -2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 106.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956766704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1703,88 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
+  recoverFrequency: 0.1
+--- !u!1001 &2028144409
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_Name
+      value: Waving Mob Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fallSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: spawnStart
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fluctuatingAmplitude
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
 --- !u!1001 &8123077482616097928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1689,11 +1920,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.52
+      value: 18.6
       objectReference: {fileID: 0}
     - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.07
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 1529914162848350622, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1735,6 +1966,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waving Mob Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2896272713628269425, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
+      propertyPath: fallSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6988282202488656254, guid: 277173a3063e9f442b6c232590dcd6e6, type: 3}
       propertyPath: spawnCount
       value: 12
@@ -1762,4 +2001,7 @@ SceneRoots:
   - {fileID: 428248494}
   - {fileID: 986585676}
   - {fileID: 9033819012224682592}
-  - {fileID: 1023943245}
+  - {fileID: 2028144409}
+  - {fileID: 277922145}
+  - {fileID: 772388051}
+  - {fileID: 1455260045}

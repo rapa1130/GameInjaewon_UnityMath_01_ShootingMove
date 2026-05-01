@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour
     private float bulletSpeedXRandomed;
     private float bulletSpeedYRandomed;
 
+    private bool isCollide;
+
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class Bullet : MonoBehaviour
         accumulateTime = 0;
         bulletSpeedXRandomed = Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
         bulletSpeedYRandomed = Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
+        isCollide = false;
     }
     private void FixedUpdate()
     {
@@ -72,6 +75,7 @@ public class Bullet : MonoBehaviour
     }
     public virtual void Move()
     {
+        if (isCollide) return;
         accumulateTime += Time.deltaTime;
         float totalYDistance = yBackDistance + yDistance;
         float goalX; 
@@ -101,8 +105,14 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        Destroy(this.gameObject);
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
+        GetComponent<TrailRenderer>().emitting = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(this.gameObject,1f);
+        isCollide = true;   
     }
 
 }

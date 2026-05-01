@@ -10,16 +10,20 @@ public class WarmTailMovement : MonoBehaviour
     [SerializeField] private GameObject tailPrefab;
     [SerializeField] private int tailCount;
     [SerializeField] private float tailGap;
+    [SerializeField] private float recoverFrequency;
 
     private GameObject[] tailObjs;
     private float[] localScales;
     private float startTime;
+    private float timeAfterRecover;
+
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
         tailObjs = new GameObject[tailCount];
         localScales = new float[tailCount];
+        timeAfterRecover = 0;
         for (int i = 0; i < tailCount; i++)
         {
             tailObjs[i] = Instantiate(tailPrefab,transform);
@@ -30,15 +34,17 @@ public class WarmTailMovement : MonoBehaviour
     void Update()
     {
         float nowR = 0;
-        for (int i = 0; i < tailCount; i++)
+        int i;
+        for (i = 0; i < tailCount; i++)
         {
             if (tailObjs[i] == null)
             {
-                while(++i < tailCount)
+                int j = i;
+                while(++j < tailCount)
                 {
-                    if (tailObjs[i] != null)
+                    if (tailObjs[j] != null)
                     {
-                        Destroy(tailObjs[i].gameObject);
+                        Destroy(tailObjs[j].gameObject);
                     }
                 }
                 break;
@@ -50,5 +56,18 @@ public class WarmTailMovement : MonoBehaviour
             float y = transform.position.y + nowR * Mathf.Sin(theta + fluctuatingStartAngle * Mathf.Deg2Rad);
             tailObjs[i].transform.position = new Vector3(x, y, transform.position.z);
         }
+
+        if(i != tailCount)
+        {
+            timeAfterRecover += Time.deltaTime;
+            if(timeAfterRecover > recoverFrequency)
+            {
+                Debug.Log("Recover!");
+                tailObjs[i] = Instantiate(tailPrefab, transform);
+                tailObjs[i].transform.localScale = Vector3.one * ((float)(tailCount - i + 2) / (tailCount + 2));
+                timeAfterRecover = 0;
+            }
+        }
+
     }
 }

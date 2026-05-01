@@ -20,8 +20,8 @@ public class WavingMob : MonoBehaviour
     void Update()
     {
         accumulateTime += Time.deltaTime;
-        float x = initialPosition.x + fluctuatingAmplitude* Mathf.Sin(accumulateTime * fluctuatingFrequency + fluctuatingStartAngle*Mathf.Deg2Rad);
-        float y = initialPosition.y - accumulateTime * fallSpeed;
+        float x = initialPosition.x - accumulateTime * fallSpeed;
+        float y = initialPosition.y + fluctuatingAmplitude * Mathf.Sin(accumulateTime * fluctuatingFrequency + fluctuatingStartAngle * Mathf.Deg2Rad); 
         transform.position = new Vector3(x, y, transform.position.z);
     }
 }

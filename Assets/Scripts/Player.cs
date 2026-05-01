@@ -7,7 +7,13 @@ public class Player : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float bulletSpread;
     [SerializeField] private float speed;
-    
+
+    private Camera cam;
+
+    private void Start()
+    {
+        cam = Camera.main;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -44,7 +50,7 @@ public class Player : MonoBehaviour
             bulletRight.transform.position = transform.position;
             //bulletRight.transform.Rotate(0, 0, bulletSpread);
             bulletLeft.BulletXDirection = Direction.RIGHT;
-
         }
+
     }
 }
