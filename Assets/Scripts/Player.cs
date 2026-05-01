@@ -35,16 +35,16 @@ public class Player : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Bullet bulletCenter = Instantiate(bulletPrefab);
-            bulletCenter.transform.position = transform.position;
-
             Bullet bulletLeft = Instantiate(bulletPrefab);
             bulletLeft.transform.position = transform.position;
-            bulletLeft.transform.Rotate(0, 0, -bulletSpread);
+            //bulletLeft.transform.Rotate(0, 0, -bulletSpread);
+            bulletLeft.BulletXDirection = Direction.LEFT;
 
             Bullet bulletRight = Instantiate(bulletPrefab);
             bulletRight.transform.position = transform.position;
-            bulletRight.transform.Rotate(0, 0, bulletSpread);
+            //bulletRight.transform.Rotate(0, 0, bulletSpread);
+            bulletLeft.BulletXDirection = Direction.RIGHT;
+
         }
     }
 }

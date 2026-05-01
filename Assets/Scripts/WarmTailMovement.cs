@@ -6,34 +6,48 @@ public class WarmTailMovement : MonoBehaviour
 {
     [SerializeField] private float fluctuatingDegree;
     [SerializeField] private float fluctuatingFrequency;
+    [SerializeField] private float fluctuatingStartAngle;
     [SerializeField] private GameObject tailPrefab;
     [SerializeField] private int tailCount;
     [SerializeField] private float tailGap;
 
     private GameObject[] tailObjs;
+    private float[] localScales;
     private float startTime;
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
         tailObjs = new GameObject[tailCount];
+        localScales = new float[tailCount];
         for (int i = 0; i < tailCount; i++)
         {
             tailObjs[i] = Instantiate(tailPrefab,transform);
             tailObjs[i].transform.localScale = Vector3.one * ((float)(tailCount - i + 2) / (tailCount+2));
+            localScales[i] = tailObjs[i].transform.localScale.x;
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
+        float nowR = 0;
         for (int i = 0; i < tailCount; i++)
         {
-            float r = (i + 1) * tailGap;
+            if (tailObjs[i] == null)
+            {
+                while(++i < tailCount)
+                {
+                    if (tailObjs[i] != null)
+                    {
+                        Destroy(tailObjs[i].gameObject);
+                    }
+                }
+                break;
+            }
+            nowR += localScales[i];
             float accumulateTime = Time.time - startTime;
-            float theta = (fluctuatingDegree* Mathf.Deg2Rad) * Mathf.Sin(accumulateTime * fluctuatingFrequency + (((float)tailCount-i)/tailCount) * (Mathf.PI) + Mathf.PI*(3.0f/2.0f) );
-            float x = transform.position.x + r * Mathf.Cos(theta);
-            float y = transform.position.y + r * Mathf.Sin(theta);
+            float theta = (fluctuatingDegree * Mathf.Deg2Rad) * Mathf.Sin(accumulateTime * fluctuatingFrequency + (((float)tailCount - i) / tailCount) * (Mathf.PI));
+            float x = transform.position.x + nowR * Mathf.Cos(theta + fluctuatingStartAngle * Mathf.Deg2Rad);
+            float y = transform.position.y + nowR * Mathf.Sin(theta + fluctuatingStartAngle * Mathf.Deg2Rad);
             tailObjs[i].transform.position = new Vector3(x, y, transform.position.z);
         }
     }

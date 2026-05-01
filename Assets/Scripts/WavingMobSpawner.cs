@@ -45,7 +45,8 @@ public class WavingMobSpawner : MonoBehaviour
         mobPrefab.fluctuatingAmplitude = fluctuatingAmplitude;
         mobPrefab.fluctuatingStartAngle = fluctuatingStartAngle;
         mobPrefab.fallSpeed = fallSpeed;
-        Instantiate(mobPrefab);
+        WavingMob wavMob = Instantiate(mobPrefab);
+        wavMob.transform.position = transform.position;
         lastSpawnTime = Time.time;
         spawnCount--;
     }
