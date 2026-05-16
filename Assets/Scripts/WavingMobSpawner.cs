@@ -12,26 +12,36 @@ public class WavingMobSpawner : MonoBehaviour
     [SerializeField] private float spawnTerm;
     [SerializeField] private float spawnStart;
 
+
+
     [Header("Mob Setting")]
     public float fluctuatingFrequency;
     public float fluctuatingAmplitude;
     public float fluctuatingStartAngle;
     public float fallSpeed;
+    public Transform[] points;
 
+
+    public int SpawnCount
+    {
+        get => spawnCount;
+    }
 
     private float startTime;
     private float lastSpawnTime;
+    private int nowSpawnCount;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         lastSpawnTime = startTime = Time.time;
+        nowSpawnCount = spawnCount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnCount == 0)
+        if (nowSpawnCount == 0)
         {
             Destroy(this);
         }
@@ -44,10 +54,12 @@ public class WavingMobSpawner : MonoBehaviour
         mobPrefab.fluctuatingFrequency = fluctuatingFrequency;
         mobPrefab.fluctuatingAmplitude = fluctuatingAmplitude;
         mobPrefab.fluctuatingStartAngle = fluctuatingStartAngle;
-        mobPrefab.fallSpeed = fallSpeed;
+        mobPrefab.moveSpeed = fallSpeed;
+        mobPrefab.points = points;
+        mobPrefab.transform.localScale = Vector3.one * (((float)nowSpawnCount / spawnCount)  + 0.25f);
         WavingMob wavMob = Instantiate(mobPrefab);
         wavMob.transform.position = transform.position;
         lastSpawnTime = Time.time;
-        spawnCount--;
+        nowSpawnCount--;
     }
 }

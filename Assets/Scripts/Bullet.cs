@@ -1,4 +1,5 @@
 //using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.ReorderableList;
@@ -36,8 +37,8 @@ public class Bullet : MonoBehaviour
         initialPosition= transform.position;
         target = null;
         accumulateTime = 0;
-        bulletSpeedXRandomed = Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
-        bulletSpeedYRandomed = Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
+        bulletSpeedXRandomed = UnityEngine.Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
+        bulletSpeedYRandomed = UnityEngine.Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
         isCollide = false;
     }
     private void FixedUpdate()
@@ -108,6 +109,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
+            if(StageManager.Instance != null) StageManager.Instance.DecreaseEnemyCnt();
         }
         GetComponent<TrailRenderer>().emitting = false;
         GetComponent<CapsuleCollider>().enabled = false;
