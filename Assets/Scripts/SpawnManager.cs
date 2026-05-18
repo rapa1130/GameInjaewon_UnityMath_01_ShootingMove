@@ -4,17 +4,17 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StageManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
-    static private StageManager instance = null;
-    static public StageManager Instance
+    static private SpawnManager instance = null;
+    static public SpawnManager Instance
     {
         get { return instance; }
     }
 
     [SerializeField] private WavingMobSpawner[] spanwer;
     private int enemyCount;
-    
+    string nowScene;
     public void DecreaseEnemyCnt()
     {
         --enemyCount;
@@ -24,15 +24,18 @@ public class StageManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(this.gameObject);
         }
     }
+    
     private void Start()
     {
         enemyCount = 0;
         for (int i = 0; i < spanwer.Length; i++)
         {
-            enemyCount += spanwer[i].SpawnCount;
+            if (spanwer[i] != null)
+            {
+                enemyCount += spanwer[i].SpawnCount;
+            }
         }
     }
     private void Update()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,13 +16,14 @@ public class WarmTailMovement : MonoBehaviour
     [SerializeField] private float gulpingTermPerElements = 0.2f;
     [SerializeField] private float gulpingFrequency = 8;
     [SerializeField] private float gulpingAmplitude = 0.15f;
-
-
+    [SerializeField] private float flikeringFrequency = 3.0f;
 
     private GameObject[] tailObjs;
     private float[] localScales;
+
     private float startTime;
     private float timeAfterRecover;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,40 @@ public class WarmTailMovement : MonoBehaviour
             localScales[i] = tailObjs[i].transform.localScale.x;
         }
     }
+
+    public int FindGoIndex(Collider col)
+    {
+        for(int i=0;i<tailObjs.Length;i++)
+        {
+            if (tailObjs[i] == col.gameObject)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void Attack(Collider col)
+    {
+        int findedIndex = FindGoIndex(col);
+        if (findedIndex != -1)
+        {
+            for (int i = findedIndex + 1; i < tailObjs.Length; i++) 
+            {
+                if (tailObjs[i] != null) return;
+            }
+            Destroy(tailObjs[findedIndex]);
+            tailObjs[findedIndex] = null;
+        }
+
+        if(findedIndex == 1)
+        {
+            Debug.Log("findedIndex == 0");
+            Destroy(this.gameObject);
+        }
+    }
+  
+
     void RecoverTail(int index)
     {
         if (index != tailCount)
@@ -97,12 +133,36 @@ public class WarmTailMovement : MonoBehaviour
             tailObjs[i].transform.localScale = Vector3.one * (localScales[i] + localScales[i]* gulpingAmplitude* Mathf.Sin(theta));
         }
     }
-
+    void ChangeTipColor()
+    {
+        int lastIndex = -1;
+        for (int i = tailCount-1; i >= 0; i--) 
+        {
+            if (tailObjs[i] != null)
+            {
+                lastIndex = i;
+                break;
+            }
+        }
+        if(lastIndex != -1)
+        {
+            for (int i = 0; i < lastIndex; i++)
+            {
+                tailObjs[i].GetComponent<MeshRenderer>().material.color = Color.white;
+            }
+            float declineFactor = 0.5f + Mathf.Sin((Time.time - startTime) * flikeringFrequency) / 2.0f;
+            float g = 1.0f - declineFactor;
+            float b = 1.0f - declineFactor;
+            tailObjs[lastIndex].GetComponent<MeshRenderer>().material.color = new Color(1.0f, g, b, 1.0f);
+        }
+    }
     void Update()
     {
         int last = CheckAndRemoveCuttedTail();
         RecoverTail(last);
         WaveTail();
         GulpingTail();
+        ChangeTipColor();
     }
+
 }

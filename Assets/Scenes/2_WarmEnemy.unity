@@ -160,10 +160,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &80908552
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -288,10 +289,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &137707409
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -416,10 +418,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &168856118
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -625,10 +628,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &309035530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -728,6 +732,7 @@ GameObject:
   - component: {fileID: 428248492}
   - component: {fileID: 428248491}
   - component: {fileID: 428248495}
+  - component: {fileID: 428248496}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -750,7 +755,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -817,7 +822,7 @@ Transform:
   m_GameObject: {fileID: 428248490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.26, z: 0}
+  m_LocalPosition: {x: 0, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -837,7 +842,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7660478982393328030, guid: 20efe6498e9cf1a4a8552269023f98c2, type: 3}
   bulletSpread: 10
-  speed: 5
+  speed: 7
+  minX: -20.9
+  maxX: 20.9
+  minY: -10.6
+  maxY: 12.6
+--- !u!54 &428248496
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428248490}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &700310039
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,10 +912,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &700310042
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1098,10 +1135,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &721677683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1307,10 +1345,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!135 &913834059
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1433,7 +1472,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.017721582, g: 0.021819646, b: 0.07169801, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1483,7 +1522,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -19.01}
+  m_LocalPosition: {x: 0, y: 1, z: -21.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1515,7 +1554,7 @@ Transform:
   m_GameObject: {fileID: 986585675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.86, y: 2.95, z: 0}
+  m_LocalPosition: {x: 1.43, y: -0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1543,10 +1582,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intialEnterSpeed: 0
   enterSpeedDamping: 0
-  xFluctuatingAmplitude: 3
-  yFluctuatingAmplitude: 1
-  xFluctuatingFrequency: 0.5
-  yFluctuatingFrequency: 1.5
+  xFluctuatingAmplitude: 14
+  yFluctuatingAmplitude: 9
+  xFluctuatingFrequency: 0.4
+  yFluctuatingFrequency: 1.2
+  killTailCount: 4
+  DeathBurstSpeed: 5
 --- !u!1 &1455260043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,10 +1765,11 @@ MonoBehaviour:
   tailPrefab: {fileID: 3673081078371490439, guid: 90436892ee3543d4ba153527f74a716b, type: 3}
   tailCount: 13
   tailGap: 1
-  recoverFrequency: 0.2
+  recoverFrequency: 2
   gulpingTermPerElements: 0.08
   gulpingFrequency: 16
   gulpingAmplitude: 0.1
+  flikeringFrequency: 10
 --- !u!1001 &2028144409
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     private float bulletSpeedYRandomed;
 
     private bool isCollide;
-
+    
 
     private void Start()
     {
@@ -111,13 +111,25 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
-            if(StageManager.Instance != null) StageManager.Instance.DecreaseEnemyCnt();
+            //Destroy(other.gameObject);
+            other.gameObject.GetComponentInParent<WarmTailMovement>()?.Attack(other);
+            if(SpawnManager.Instance != null)
+            {
+                if(other.GetComponent<WavingMob>()!=null)
+                {
+                    SpawnManager.Instance.DecreaseEnemyCnt();
+                    Destroy(other.gameObject);
+                }
+            }
         }
-        GetComponent<TrailRenderer>().emitting = false;
-        GetComponent<CapsuleCollider>().enabled = false;
-        Destroy(this.gameObject,1f);
-        isCollide = true;   
+        if(other.CompareTag("BulletRemover"))
+        {
+            GetComponent<TrailRenderer>().emitting = false;
+            GetComponent<CapsuleCollider>().enabled = false;
+            Destroy(this.gameObject, 1f);
+            isCollide = true;
+        }
+        
     }
 
 }
