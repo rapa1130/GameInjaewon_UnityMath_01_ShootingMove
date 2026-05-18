@@ -37,8 +37,11 @@ public class Bullet : MonoBehaviour
         initialPosition= transform.position;
         target = null;
         accumulateTime = 0;
+
+
         bulletSpeedXRandomed = UnityEngine.Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
         bulletSpeedYRandomed = UnityEngine.Random.Range(bulletSpeed - bulletSpeedDeviation, bulletSpeed + bulletSpeedDeviation);
+
         isCollide = false;
     }
     private void FixedUpdate()
